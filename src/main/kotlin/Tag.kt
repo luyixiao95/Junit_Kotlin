@@ -1,2 +1,1 @@
-class Tag {
-}
+class Tag

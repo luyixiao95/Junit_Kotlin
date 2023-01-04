@@ -1,2 +1,4 @@
-class VoteEnum {
+enum class VoteEnum {
+    Up,
+    Down,
 }

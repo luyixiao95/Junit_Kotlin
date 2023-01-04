@@ -1,7 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.10"
+    idea
+    java
+    eclipse
     application
 }
 
@@ -14,10 +17,14 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
 }
 
 tasks.test {
     useJUnitPlatform()
+    testLogging {
+        events ( "passed", "skipped", "failed")
+    }
 }
 
 tasks.withType<KotlinCompile> {
